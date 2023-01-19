@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import Web3 from "web3";
 import ElectionContractBuild from './Election.json';
 import { useNavigate } from "react-router-dom";
+import { useUserContext } from "../context/user_context";
 
 
 const YOUR_CONTRACT_ADDRESS = "0xDC76cF4548876ABdFdEBEDf0bAC63e08FF5Ee563";
@@ -10,7 +11,7 @@ const web3 = new Web3(Web3.givenProvider || "http://localhost:7545");
 
 const Voting = () => {
 		const navigate = useNavigate();
-	
+		const {setId} = useUserContext();
 		useEffect(() => {
 		loadBlockchainData();
 		}, []);
@@ -20,7 +21,7 @@ const Voting = () => {
 		try {
 			//await setID(e.target.value);
 			const accounts = await web3.eth.getAccounts();
-
+			setId(e.target.value);
 			const electionContract = new web3.eth.Contract(ElectionContractBuild.abi, YOUR_CONTRACT_ADDRESS);
 			electionContract.setProvider(web3.givenProvider);
 			electionContract.methods.vote(parseInt(e.target.value));

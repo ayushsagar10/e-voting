@@ -8,7 +8,7 @@ const web3 = new Web3(Web3.givenProvider || "http://localhost:7545");
 
 
 const Result = () => {
-  
+    const {id, setId} = useUserContext();
     const [ecandidate1, setCand] = useState({}); 
       useEffect(() => {
 		loadBlockchainData();
@@ -22,7 +22,10 @@ const Result = () => {
 	}
     return (
         <>
-            <h1>Hello the vote is given to {} </h1>
+            <h1>Hello the vote is given to {id} </h1>
+            <button onClick={()=>{
+                setId(id+1);
+            }}>check id</button>
         </>
         
     )

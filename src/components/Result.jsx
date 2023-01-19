@@ -22,7 +22,7 @@ const Result = () => {
 	}
     return (
         <>
-            <h1>Hello the vote is given to {id} </h1>
+            <h1>Hello the vote is given to {} </h1>
         </>
         
     )

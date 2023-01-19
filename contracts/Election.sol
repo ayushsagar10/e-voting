@@ -24,6 +24,7 @@ contract Election {
         addCandidate("BJP");
         addCandidate("AAP");
         addCandidate("Congress");
+        vote(2);
     }
 
     function addCandidate(string memory _name) private {

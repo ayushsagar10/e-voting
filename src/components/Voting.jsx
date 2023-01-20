@@ -15,8 +15,6 @@ const Voting = () => {
 		useEffect(() => {
 		loadBlockchainData();
 		}, []);
-	//const [id, setID] = useState(0);
-		//useEffect(() => {},[id]);
 	async function castVote(e) {
 		try {
 			//await setID(e.target.value);

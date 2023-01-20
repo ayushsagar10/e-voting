@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+.result-heading {
+  font-size: 4rem;
+}
+
+.result-content {
+  color: #3a3262;
+}
+
+.result-table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+}
+
+table,
+td,
+th {
+  border: 2px solid;
+}
+
+th,
+td {
+  padding: 1.5rem 6rem;
+}
